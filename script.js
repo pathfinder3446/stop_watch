@@ -23,12 +23,15 @@ const timeOfWatch = () => {
     msec = String(msec).length < 2 ? "0" + msec : msec;
     display.innerHTML = `${min}:${sec}:${msec}`;
 };
+
 const playTime = () =>{
     timer = setInterval(timeOfWatch, 10);
 };
+
 const stopTime = () => {
     clearInterval(timer);
 };
+
 btnPlay.addEventListener("click", () => {
     isWatchStop =!isWatchStop;
     if(isWatchStop == false){
@@ -39,6 +42,7 @@ btnPlay.addEventListener("click", () => {
         btnPlay.innerHTML = ` <i class="fa-solid fa-circle-play"></i> PLAY`;
     }
 });
+
 btnStop.addEventListener("click", () =>{
     isWatchStop = true;
     stopTime();
